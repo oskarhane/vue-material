@@ -47,13 +47,13 @@ export default {
       this.parentContainer.isFocused = false;
       this.setParentValue();
     },
-    onInput() {
+    onInput(ev) {
       const value = this.$el.value;
 
       this.setParentValue();
       this.parentContainer.inputLength = value ? value.length : 0;
-      this.$emit('change', value);
-      this.$emit('input', value);
+      this.$emit('change', value, ev);
+      this.$emit('input', value, ev);
     }
   }
 };
